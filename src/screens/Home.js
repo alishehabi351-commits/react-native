@@ -1,5 +1,7 @@
 import React from 'react'
 import { Text, StyleSheet, View, Button, Pressable } from 'react-native'
+import Swiper from 'react-native-swiper';
+
 
 const Home = ({navigation}) => {
     const openAbout = () => {
