@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, StyleSheet, View, Button, Pressable } from 'react-native'
+import { Text, StyleSheet, View, Button, Pressable , Image} from 'react-native'
 import Swiper from 'react-native-swiper';
 
 
@@ -9,19 +9,53 @@ const Home = ({navigation}) => {
     };
 
     return(
-        <View style={styles.container}>
-            <Text style={styles.emoji}>🏠</Text>
-            <Text style={styles.title}>Home Screen</Text>
-            <Text style={styles.description}>Welcome to the home screen of our windows application</Text>
-            <Pressable style={styles.button} onPress={openAbout}>
-                <Text style={styles.btnText}>Go to About</Text>
-            </Pressable>
+            
+        <View style={styles.container}> 
+            <View style={styles.sliderContainer}>
+                <Swiper 
+                autoplay
+                autoplayTimeout={5}
+                activeDotColor='#22D4FF'
+                loop={true}>
 
-            <Button
-            title="Open Menu"
-            onPress={()=> navigation.openDrawer()}
-            ></Button>
+                    <View style={styles.item}>
+                        <Image
+                        source={require("../../assets/mc1.jpeg")}
+                        style={styles.imgItem}
+                        resizeMode='contain'
+                        ></Image>
+                    </View>
+
+                    <View style={styles.item}>
+                        <Image
+                        source={require("../../assets/mc2.jpeg")}
+                        style={styles.imgItem}
+                        resizeMode='contain'
+                        ></Image>
+                    </View>
+
+                    <View style={styles.item}>
+                        <Image
+                        source={require("../../assets/mc3.jpeg")}
+                        style={styles.imgItem}
+                        resizeMode='contain'
+                        ></Image>
+                    </View>
+
+                    <View style={styles.item}>
+                        <Image
+                        source={require("../../assets/mc4.jpeg")}
+                        style={styles.imgItem}
+                        resizeMode='contain'
+                        ></Image>
+                    </View>
+                </Swiper>
+            </View>
+
         </View>
+
+
+
     )
 }
 
@@ -32,6 +66,31 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+
+    sliderContainer: {
+        width: "90%",
+        height: "100%",
+        justifyContent: 'center',
+        alignSelf: 'center',        
+        marginTop: 10,
+        borderRadius: 8,
+        overflow: 'hidden'
+
+
+    },
+
+    item:{
+        flex: 1,
+        justifyContent: 'center'
+
+    },
+
+    imgItem:{
+        width: '100%',
+        height: '100%',
+        borderRadius: 8
+    },
+
     emoji: {
         fontSize: 50,
         fontWeight: 'bold',   
@@ -59,6 +118,8 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold'
-    }
+    },
+
+    
 });
 export default Home;
