@@ -1,12 +1,13 @@
 import React from 'react'
 import { Text, StyleSheet, View, Button, Pressable , Image} from 'react-native'
 import Swiper from 'react-native-swiper';
+import Icon from '../components/Icons';
 
-
-const Home = ({navigation}) => {
     const openAbout = () => {
         navigation.navigate('About');
     };
+const Home = ({navigation}) => {
+
 
     return(
             
@@ -52,11 +53,18 @@ const Home = ({navigation}) => {
                 </Swiper>
             </View>
 
+        <View style={styles.iconsContainer}>
+            <Icon name="cellphone" iconText="iPhone"/>
+            <Icon name="android" iconText="Samsung"/>
+            <Icon name="laptop" iconText="Laptop"/>
+        </View>
         </View>
 
 
-
+ 
     )
+
+    
 }
 
 const styles = StyleSheet.create({
@@ -64,7 +72,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingBottom: 100,
     },
 
     sliderContainer: {
@@ -119,7 +128,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold'
     },
-
+    iconsContainer: {
+        width: '90%',
+        alignSelf: "center",
+        marginTop: 30,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    }
     
 });
 export default Home;
